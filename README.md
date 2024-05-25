@@ -1,26 +1,26 @@
 # mood_bracelet
 mood bracelet with PWM leds and protrinket 5V
 
-SETUP: Steps:
-adafruit libraries in your IDE
-AVR dude installed with apt or in IDE
+SETUP: Steps:</br>
+adafruit libraries in your IDE</br>
+AVR dude installed with apt or in IDE</br>
 
-SETUP: Commands used:
-sudo mv 99-adafruit-boards.rules /etc/udev/rules.d/
-sudo usermod -a -G dialout $USER
-wget https://github.com/adafruit/Trinket_Arduino_Linux/blob/master/99-adafruit-boards.rules
-sudo mv 99-adafruit-boards.rules /etc/udev/rules.d/
-sudo udevadm control --reload-rules
-sudo udevadm trigger
+SETUP: Commands used:</br>
+sudo mv 99-adafruit-boards.rules /etc/udev/rules.d/</br>
+sudo usermod -a -G dialout $USER</br>
+wget https://github.com/adafruit/Trinket_Arduino_Linux/blob/master/99-adafruit-boards.rules</br>
+sudo mv 99-adafruit-boards.rules /etc/udev/rules.d/</br>
+sudo udevadm control --reload-rules</br>
+sudo udevadm trigger</br>
 lsusb
 
 
-checking ports:
- lsusb
- dmesg
- ls /dev/tty*
+checking ports:</br>
+ lsusb</br>
+ dmesg</br>
+ ls /dev/tty*</br>
 
-unlup and replug the trinket
-maybe press reset button twice
+unlup and replug the trinket</br>
+maybe press reset button twice</br>
 
 e.g. ----->>      avrdude -c usbtiny -p atmega328p -U flash:w:/home/ivan/Arduino/sketch_may25b/build/adafruit.avr.protrinket5/sketch_may25b.ino.hex
