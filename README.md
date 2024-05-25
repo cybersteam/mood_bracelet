@@ -2,8 +2,8 @@
 mood bracelet with PWM leds and protrinket 5V
 
 SETUP: Steps:
-  adafruit libraries in your IDE
-  AVR dude installed with apt or in IDE
+adafruit libraries in your IDE
+AVR dude installed with apt or in IDE
 
 SETUP: Commands used:
 sudo mv 99-adafruit-boards.rules /etc/udev/rules.d/
