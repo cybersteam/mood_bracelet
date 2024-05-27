@@ -1,3 +1,12 @@
+//Capabilities we want
+//overall brightness
+// button press number of times
+// states:
+//   warm
+//   cool
+//   crystal
+//   etc.
+
 // Define inputs
 const int buttonPin = 8;  // Pin connected to the button
 const unsigned long debounceDelay = 50;  // Debounce time in milliseconds
