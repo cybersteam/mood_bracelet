@@ -1,18 +1,37 @@
 //Capabilities we want
 //overall brightness
-// button press number of times
-// states:
-//   warm
-//   cool
-//   crystal
-//   etc.
+//button press number of times
+//states:
+//warm
+//cool
+//crystal
+//etc.
 
-// Define inputs
+// Define button pin and delay times
 const int buttonPin = 8;  // Pin connected to the button
 const unsigned long debounceDelay = 50;  // Debounce time in milliseconds
 const unsigned long doublePressDelay = 400;  // Maximum time between presses for a double press
 
+//Assign ANALOG pins for sensor inputs:
+// A6
+// A7
+// 14 A0
+// 15 A1
+// 16 A2
+// 17 A3
+// 18 A4
+// 19 A5
+
 // Assign PWM pins
+// 0 - rx 
+// 1 - tx 
+// 3
+// 4
+// 5
+// 6
+// 8
+// 9
+// 10
 const int pwmPin = 11;
 const int pwmPin2 = 12;
 const int pwmPin3 = 13;
@@ -52,6 +71,12 @@ void loop() {
   if (reading != lastButtonState) {
     lastDebounceTime = millis();
   }
+  
+/*
+The value returned by millis() is an unsigned long integer, which 
+can range from 0 to 4,294,967,295 milliseconds (approximately 50 days). 
+Once the counter reaches its maximum value, it will roll over back to 0.
+*/
 
   // If the button state is stable for debounceDelay milliseconds
   if ((millis() - lastDebounceTime) > debounceDelay) {
@@ -80,10 +105,8 @@ void loop() {
     }
     pressCount = 0;  // Reset the press count
   }
-
   // Update the last button state
   lastButtonState = reading;
-
 }
 
 // Define the functions to be called on button presses
@@ -100,7 +123,7 @@ void function1() {
   delay(1000);  
   analogWrite(pwmPin2, pwm_state06);
   delay(1000);
-  analogWrite(pwmPin2, pwm_state07);
+  analogWrite(pwmPin3, pwm_state07);
   delay(1000);
   analogWrite(pwmPin2, pwm_state08);
   delay(1000);
@@ -130,16 +153,16 @@ void function3() {
   delay(1000);  
   analogWrite(pwmPin, pwm_state03);
   delay(1000);
-  analogWrite(pwmPin, pwm_state05);
-  delay(1000);
-  analogWrite(pwmPin, pwm_state08);
-  delay(1000);
-  analogWrite(pwmPin2, pwm_state01);
-  delay(1000);  
-  analogWrite(pwmPin2, pwm_state03);
-  delay(1000);
   analogWrite(pwmPin2, pwm_state05);
   delay(1000);
   analogWrite(pwmPin2, pwm_state08);
+  delay(1000);
+  analogWrite(pwmPin3, pwm_state01);
+  delay(1000);  
+  analogWrite(pwmPin3, pwm_state03);
+  delay(1000);
+  analogWrite(pwmPin3, pwm_state05);
+  delay(1000);
+  analogWrite(pwmPin3, pwm_state08);
   delay(1000);
 }
