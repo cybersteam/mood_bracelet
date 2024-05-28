@@ -14,8 +14,9 @@ sudo udevadm control --reload-rules</br>
 sudo udevadm trigger</br>
 lsusb
 
-PROTRINKET PINOUT:
+PROTRINKET PINOUT and other detail:
 https://learn.adafruit.com/introducing-pro-trinket/pinouts
+https://cdn-learn.adafruit.com/downloads/pdf/introducing-pro-trinket.pdf
 
 checking ports:</br>
  lsusb</br>
