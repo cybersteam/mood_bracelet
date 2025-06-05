@@ -6,12 +6,11 @@ adafruit libraries in your IDE</br>
 AVR dude installed with apt or in IDE</br>
 
 SETUP: Commands used:</br>
-sudo mv 99-adafruit-boards.rules /etc/udev/rules.d/</br>
-sudo usermod -a -G dialout $USER</br>
 wget https://github.com/adafruit/Trinket_Arduino_Linux/blob/master/99-adafruit-boards.rules</br>
 sudo mv 99-adafruit-boards.rules /etc/udev/rules.d/</br>
 sudo udevadm control --reload-rules</br>
 sudo udevadm trigger</br>
+sudo usermod -a -G dialout $USER</br>
 lsusb
 
 PROTRINKET PINOUT and other detail:
